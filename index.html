@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  <head>
+    <!-- Required Meta -->
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <!-- Favicon -->
+    <link rel="icon" href="#" />
+    <title>مجموعة ستار فيش</title>
+
+    <!-- Swiper Slider Style -->
+    <link rel="stylesheet" href="plugins/swiper/css/swiper-bundle.min.css" />
+    <!-- Page Style -->
+    <link rel="stylesheet" href="css/home.css" />
+
+    <!-- Preloader Style -->
+    <style>
+      .preloader {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 9999999999;
+        background-color: transparent;
+        text-align: center;
+        transition: 0.9s ease-in-out;
+      }
+      .preloader.hide {
+        visibility: hidden;
+      }
+      .preloader::before,
+      .preloader::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        width: 60%;
+        height: 100%;
+        z-index: -1;
+        background: var(--dark);
+        transition: 0.9s;
+        overflow: hidden;
+      }
+      .preloader::before {
+        left: 0;
+      }
+      .preloader::after {
+        right: 0;
+      }
+      .preloader.hide::before,
+      .preloader.hide::after {
+        width: 0;
+      }
+      .preloader .loader {
+        position: absolute;
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+        top: 45%;
+        transform: translateY(-45%);
+        display: inline-block;
+      }
+      .preloader.hide .loader {
+        opacity: 0;
+        visibility: hidden;
+        display: none;
+      }
+      .preloader .loader .loader-outer {
+        position: absolute;
+        border: 4px solid #c59d5f;
+        border-left-color: transparent;
+        border-bottom: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        -webkit-animation: loader-outter 1s cubic-bezier(0.42, 0.61, 0.58, 0.41)
+          infinite;
+        animation: loader-outter 1s cubic-bezier(0.42, 0.61, 0.58, 0.41)
+          infinite;
+      }
+      .preloader .loader .loader-inner {
+        position: absolute;
+        border: 4px solid #c59d5f;
+        border-radius: 50%;
+        width: 70px;
+        height: 70px;
+        left: calc(50% - 35px);
+        top: calc(50% - 35px);
+        border-right: 0;
+        border-top-color: transparent;
+        -webkit-animation: loader-inner 1s cubic-bezier(0.42, 0.61, 0.58, 0.41)
+          infinite;
+        animation: loader-inner 1s cubic-bezier(0.42, 0.61, 0.58, 0.41) infinite;
+      }
+      @-webkit-keyframes loader-outter {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+      @keyframes loader-outter {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+      @-webkit-keyframes loader-inner {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(-360deg);
+        }
+      }
+      @keyframes loader-inner {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(-360deg);
+        }
+      }
+    </style>
+  </head>
+  <body data-current-theme="star-fish-theme">
+    <!-- Start of Preloader -->
+    <div class="preloader" id="preloader">
+      <div class="loader">
+        <div class="loader-outer"></div>
+        <div class="loader-inner"></div>
+      </div>
+    </div>
+    <!-- End of Preloader -->
+
+    <main class="app" id="pageApp">
+      <!-- Start of Header -->
+      <header class="header">
+        <div class="container">
+          <div>
+            <span class="header-subtitle">مرحبا بك فى</span>
+            <h1 class="header-title">سلسلة مطاعم ستار فيش</h1>
+          </div>
+          <div class="language-wrapper">
+            <div class="selected-lang">
+              <span class="label">عربي</span>
+              <div class="icon">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="feather feather-chevron-down"
+                >
+                  <polyline points="6 9 12 15 18 9" />
+                </svg>
+              </div>
+            </div>
+            <ul class="languages">
+              <li>
+                <a href="#" class="active">عربي</a>
+              </li>
+              <li>
+                <a href="#">EN</a>
+              </li>
+              <li>
+                <a href="#">RU</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <!-- End of Header -->
+
+      <!-- Start of Content -->
+      <div class="page-content lazy" data-bg="images/home-banner.webp">
+        <div class="container">
+          <div class="swiper home-swiper" id="homeSwiper">
+            <div class="swiper-wrapper">
+              <!-- Star Fish -->
+              <div class="swiper-slide" data-theme="star-fish-theme">
+                <div class="resturant star-fish">
+                  <a href="star-fish.html" class="resturant-content">
+                    <img
+                      src="images/star-fish/star-fish-logo.webp"
+                      data-src="images/star-fish/star-fish-logo.webp"
+                      alt="مطعم ستار فيش"
+                      width="200"
+                      height="200"
+                      class="lazy"
+                    />
+                    <div class="info">
+                      <h2 class="resturant-title">ستار فيش</h2>
+                      <p class="resturant-desc">
+                        استمتعوا بأشهى المأكولات البحرية الطازجة مع ستارفيش
+                      </p>
+                    </div>
+                  </a>
+                  <ul class="contact-list">
+                    <li>
+                      <a href="#" class="contact-item facebook">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="24"
+                          height="24"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          class="feather feather-facebook"
+                        >
+                          <path
+                            d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"
+                          />
+                        </svg>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#" class="contact-item instagram">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="24"
+                          height="24"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          class="feather feather-instagram"
+                        >
+                          <rect
+                            x="2"
+                            y="2"
+                            width="20"
+                            height="20"
+                            rx="5"
+                            ry="5"
+                          />
+                          <path
+                            d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"
+                          />
+                          <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+                        </svg>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <!-- El Halaka -->
+              <div class="swiper-slide" data-theme="el-halaka-theme">
+                <div class="resturant el-halaka">
+                  <a href="el-halaka.html" class="resturant-content">
+                    <img
+                      src="images/el-halaka/el-halaka-logo.webp"
+                      data-src="images/el-halaka/el-halaka-logo.webp"
+                      alt="مطعم الحلقة"
+                      width="200"
+                      height="200"
+                      class="lazy"
+                    />
+                    <div class="info">
+                      <h2 class="resturant-title">الحلقة</h2>
+                      <p class="resturant-desc">
+                        أشهر مطعم سمك و أكلات بحرية فى الغردقة و البحر الأحمر
+                      </p>
+                    </div>
+                  </a>
+                  <ul class="contact-list">
+                    <li>
+                      <a href="#" class="contact-item facebook">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="24"
+                          height="24"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          class="feather feather-facebook"
+                        >
+                          <path
+                            d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"
+                          />
+                        </svg>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#" class="contact-item whatsapp">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="24"
+                          height="24"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          class="feather feather-phone"
+                        >
+                          <path
+                            d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"
+                          />
+                        </svg>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <!-- Al Samak -->
+              <div class="swiper-slide" data-theme="al-samak-theme">
+                <div class="resturant al-samak">
+                  <a href="al-samak.html" class="resturant-content">
+                    <img
+                      src="images/al-samak/al-samak-logo.webp"
+                      data-src="images/al-samak/al-samak-logo.webp"
+                      alt="مطعم السماك"
+                      width="200"
+                      height="200"
+                      class="lazy"
+                    />
+                    <div class="info">
+                      <h2 class="resturant-title">السماك</h2>
+                      <p class="resturant-desc">
+                        من افضل مطاعم مجموعة ستار فيش المعروفة بتقديم اجود
+                        المأكولات البحرية
+                      </p>
+                    </div>
+                  </a>
+                  <ul class="contact-list">
+                    <li>
+                      <a href="#" class="contact-item facebook">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="24"
+                          height="24"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          class="feather feather-facebook"
+                        >
+                          <path
+                            d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"
+                          />
+                        </svg>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#" class="contact-item instagram">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="24"
+                          height="24"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          class="feather feather-instagram"
+                        >
+                          <rect
+                            x="2"
+                            y="2"
+                            width="20"
+                            height="20"
+                            rx="5"
+                            ry="5"
+                          />
+                          <path
+                            d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"
+                          />
+                          <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+                        </svg>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- End of Content -->
+
+      <!-- Start of Footer -->
+      <footer class="footer">
+        <div class="container">
+          <p>
+            جميع الحقوق محفوظة <a href="star-fish.html">ستار فيش</a> |
+            <a href="el-halaka.html">اسماك الحلقة</a> |
+            <a href="al-samak.html">السماك</a>
+          </p>
+          <p>
+            تصميم و برمجة
+            <a href="#" target="_blank" rel="noopener">لوريم ابسوم</a>
+          </p>
+        </div>
+      </footer>
+      <!-- End of Footer -->
+    </main>
+
+    <!-- Plugins Scripts -->
+    <script src="plugins/jquery-3.6.0.min.js" defer></script>
+    <script src="plugins/lazyload.min.js" defer></script>
+    <script src="plugins/swiper/js/swiper-bundle.min.js" defer></script>
+    <!-- Custom Scripts -->
+    <script src="js/home.js" defer></script>
+    <!-- Hide Preloader -->
+    <script>
+      const preloader = document.getElementById("preloader");
+      window.addEventListener("DOMContentLoaded", () => {
+        preloader && preloader.classList.add("hide");
+      });
+    </script>
+  </body>
+</html>
