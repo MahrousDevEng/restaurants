@@ -24,7 +24,18 @@ $(function () {
       breakpoints: {
         768: {
           autoplay: false,
+          effect: "slide",
+          centeredSlides: false,
+          slidesPerView: 2.25,
+          spaceBetween: 30,
         },
+        1200: {
+          autoplay: false,
+          effect: "slide",
+          centeredSlides: false,
+          slidesPerView: 3,
+          spaceBetween: 50,
+        }
       },
       on: {
         init: (sw) => handleChangeTheme(sw),

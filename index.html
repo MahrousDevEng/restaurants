@@ -194,7 +194,7 @@
             <div class="swiper-wrapper">
               <!-- Star Fish -->
               <div class="swiper-slide" data-theme="star-fish-theme">
-                <div class="resturant star-fish">
+                <div class="resturant star-fish lazy" data-bg="images/star-fish/res-bg.webp">
                   <a href="star-fish.html" class="resturant-content">
                     <img
                       src="images/star-fish/star-fish-logo.webp"
@@ -266,14 +266,17 @@
               </div>
               <!-- El Halaka -->
               <div class="swiper-slide" data-theme="el-halaka-theme">
-                <div class="resturant el-halaka">
+                <div
+                  class="resturant el-halaka lazy"
+                  data-bg="images/el-halaka/res-bg.webp"
+                >
                   <a href="el-halaka.html" class="resturant-content">
                     <img
                       src="images/el-halaka/el-halaka-logo.webp"
                       data-src="images/el-halaka/el-halaka-logo.webp"
                       alt="مطعم الحلقة"
-                      width="200"
-                      height="200"
+                      width="150"
+                      height="150"
                       class="lazy"
                     />
                     <div class="info">
@@ -329,7 +332,7 @@
               </div>
               <!-- Al Samak -->
               <div class="swiper-slide" data-theme="al-samak-theme">
-                <div class="resturant al-samak">
+                <div class="resturant al-samak lazy" data-bg="images/al-samak/res-bg.png">
                   <a href="al-samak.html" class="resturant-content">
                     <img
                       src="images/al-samak/al-samak-logo.webp"
@@ -401,6 +404,36 @@
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+        <div class="slider-arrows">
+          <div class="container">
+            <button
+              type="button"
+              class="btn next-slide"
+              id="nextSlide"
+              aria-label="next slide"
+            >
+              <img
+                src="images/icons/chevron-left.svg"
+                width="24"
+                height="24"
+                alt="التالى"
+              />
+            </button>
+            <button
+              type="button"
+              class="btn prev-slide"
+              id="prevSlide"
+              aria-label="prev slide"
+            >
+              <img
+                src="images/icons/chevron-right.svg"
+                width="24"
+                height="24"
+                alt="السابق"
+              />
+            </button>
           </div>
         </div>
       </div>
