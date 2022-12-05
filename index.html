@@ -147,7 +147,7 @@
       <!-- Start of Header -->
       <header class="header">
         <div class="container">
-          <div>
+          <div class="desc">
             <span class="header-subtitle">مرحبا بك فى</span>
             <h1 class="header-title">سلسلة مطاعم ستار فيش</h1>
           </div>
@@ -188,13 +188,95 @@
       <!-- End of Header -->
 
       <!-- Start of Content -->
-      <div class="page-content lazy" data-bg="images/home-banner.webp">
+      <div class="page-content">
+        <div
+          class="bg-overlay lazy"
+          data-bg="images/star-fish/star-fish.webp"
+          id="pageBgWrapper"
+        ></div>
         <div class="container">
           <div class="swiper home-swiper" id="homeSwiper">
             <div class="swiper-wrapper">
+              <!-- El Halaka -->
+              <div
+                class="swiper-slide"
+                data-theme="el-halaka-theme"
+                data-image="images/el-halaka/el-halaka.webp"
+              >
+                <div
+                  class="resturant el-halaka lazy"
+                  data-bg="images/el-halaka/res-bg.webp"
+                >
+                  <a href="el-halaka.html" class="resturant-content">
+                    <img
+                      src="images/el-halaka/el-halaka-logo.webp"
+                      data-src="images/el-halaka/el-halaka-logo.webp"
+                      alt="مطعم الحلقة"
+                      width="150"
+                      height="150"
+                      class="lazy"
+                    />
+                    <div class="info">
+                      <h2 class="resturant-title">الحلقة</h2>
+                      <p class="resturant-desc">
+                        أشهر مطعم سمك و أكلات بحرية فى الغردقة و البحر الأحمر
+                      </p>
+                    </div>
+                  </a>
+                  <ul class="contact-list">
+                    <li>
+                      <a href="#" class="contact-item facebook">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="24"
+                          height="24"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          class="feather feather-facebook"
+                        >
+                          <path
+                            d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"
+                          />
+                        </svg>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#" class="contact-item whatsapp">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="24"
+                          height="24"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          class="feather feather-phone"
+                        >
+                          <path
+                            d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"
+                          />
+                        </svg>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
               <!-- Star Fish -->
-              <div class="swiper-slide" data-theme="star-fish-theme">
-                <div class="resturant star-fish lazy" data-bg="images/star-fish/res-bg.webp">
+              <div
+                class="swiper-slide"
+                data-theme="star-fish-theme"
+                data-image="images/star-fish/star-fish.webp"
+              >
+                <div
+                  class="resturant star-fish lazy"
+                  data-bg="images/star-fish/res-bg.webp"
+                >
                   <a href="star-fish.html" class="resturant-content">
                     <img
                       src="images/star-fish/star-fish-logo.webp"
@@ -264,75 +346,16 @@
                   </ul>
                 </div>
               </div>
-              <!-- El Halaka -->
-              <div class="swiper-slide" data-theme="el-halaka-theme">
-                <div
-                  class="resturant el-halaka lazy"
-                  data-bg="images/el-halaka/res-bg.webp"
-                >
-                  <a href="el-halaka.html" class="resturant-content">
-                    <img
-                      src="images/el-halaka/el-halaka-logo.webp"
-                      data-src="images/el-halaka/el-halaka-logo.webp"
-                      alt="مطعم الحلقة"
-                      width="150"
-                      height="150"
-                      class="lazy"
-                    />
-                    <div class="info">
-                      <h2 class="resturant-title">الحلقة</h2>
-                      <p class="resturant-desc">
-                        أشهر مطعم سمك و أكلات بحرية فى الغردقة و البحر الأحمر
-                      </p>
-                    </div>
-                  </a>
-                  <ul class="contact-list">
-                    <li>
-                      <a href="#" class="contact-item facebook">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          width="24"
-                          height="24"
-                          viewBox="0 0 24 24"
-                          fill="none"
-                          stroke="currentColor"
-                          stroke-width="2"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                          class="feather feather-facebook"
-                        >
-                          <path
-                            d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"
-                          />
-                        </svg>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#" class="contact-item whatsapp">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          width="24"
-                          height="24"
-                          viewBox="0 0 24 24"
-                          fill="none"
-                          stroke="currentColor"
-                          stroke-width="2"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                          class="feather feather-phone"
-                        >
-                          <path
-                            d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"
-                          />
-                        </svg>
-                      </a>
-                    </li>
-                  </ul>
-                </div>
-              </div>
               <!-- Al Samak -->
-              <div class="swiper-slide" data-theme="al-samak-theme">
-                <div class="resturant al-samak lazy" data-bg="images/al-samak/res-bg.png">
+              <div
+                class="swiper-slide"
+                data-theme="al-samak-theme"
+                data-image="images/home-banner.webp"
+              >
+                <div
+                  class="resturant al-samak lazy"
+                  data-bg="images/al-samak/res-bg.png"
+                >
                   <a href="al-samak.html" class="resturant-content">
                     <img
                       src="images/al-samak/al-samak-logo.webp"
