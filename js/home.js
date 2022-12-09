@@ -7,49 +7,73 @@ $(function () {
   // Trigger Swiper
   const swiperWrapper = $("#homeSwiper"),
     nextBtn = $("#nextSlide"),
-    prevBtn = $("#prevSlide");
-
-  if (swiperWrapper.length !== 0) {
-    const swiper = new Swiper("#homeSwiper", {
-      initialSlide: 1,
-      effect: "coverflow",
-      coverflowEffect: {
-        rotate: 50,
-        depth: 150,
-      },
+    prevBtn = $("#prevSlide"),
+    commonProps = {
       grabCursor: true,
+      speed: 2000,
+      mousewheel: true,
       centeredSlides: true,
-      slidesPerView: "auto",
-      speed: 1500,
       autoplay: {
         delay: 5000,
       },
-      breakpoints: {
-        768: {
-          autoplay: false,
-          effect: "slide",
-          slidesPerView: 2.25,
-          spaceBetween: 30,
-        },
-        1200: {
-          autoplay: false,
-          effect: "slide",
-          slidesPerView: 3,
-          spaceBetween: 50,
-        },
-      },
       on: {
-        init: (sw) => handleChangeTheme(sw),
+        init: (sw) => {
+          handleChangeTheme(sw);
+        },
         // Handle Slide Change and Change Theme
         slideChange: (sw) => handleChangeTheme(sw),
       },
+    };
+
+  if (swiperWrapper.length !== 0) {
+    if ($(window).width() < 768) {
+      mobileSliderProps();
+    } else {
+      const swiper = desktopSliderProps();
+
+      swiper.slides.forEach((el, index) => {
+        el.addEventListener("mouseenter", () => {
+          swiper.slideTo(index, 2000, true);
+        });
+      });
+
+      // Click Next Button
+      nextBtn.on("click", (e) => {
+        e.preventDefault();
+
+        swiper.slideNext(2000, true);
+      });
+
+      // Click Previous Button
+      prevBtn.on("click", (e) => {
+        e.preventDefault();
+
+        swiper.slidePrev(2000, true);
+      });
+    }
+  }
+
+  // Trigger Mobile Swiper
+  function mobileSliderProps() {
+    return new Swiper("#homeSwiper", {
+      direction: "vertical",
+      slidesPerView: 1.5,
+      ...commonProps,
     });
+  }
 
-    // Next Slide Action
-    nextBtn.on("click", () => swiper.slideNext(1500));
-
-    // Previous Slide Action
-    prevBtn.on("click", () => swiper.slidePrev(1500));
+  // Trigger Desktop Swiper
+  function desktopSliderProps() {
+    return new Swiper("#homeSwiper", {
+      initialSlide: 1,
+      effect: "coverflow",
+      slidesPerView: "auto",
+      coverflowEffect: {
+        slideShadows: false,
+      },
+      spaceBetween: 20,
+      ...commonProps,
+    });
   }
 
   function handleChangeTheme(sw) {
